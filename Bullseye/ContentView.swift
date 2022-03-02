@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
+    //best practice to mark any State variable private
     @State private var alertIsVisibile: Bool = false
     @State private var sliderValue: Double = 50.0
     
@@ -39,7 +40,9 @@ struct ContentView: View {
             }
             .alert(isPresented: $alertIsVisibile,
                    content:{
-                return Alert(title: Text("Hello there!"), message: Text("This is my first popup"), dismissButton: .default(Text("Awesome!")))
+                var roundedValue: Int =
+                Int(self.sliderValue.rounded())
+                return Alert(title: Text("Hello there!"), message: Text("The slider's value is \(roundedValue)."), dismissButton: .default(Text("Awesome!")))
             })
            
         }
