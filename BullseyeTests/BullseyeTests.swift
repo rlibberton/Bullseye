@@ -8,6 +8,8 @@
 import XCTest
 @testable import Bullseye
 
+//cmd + u to run all unit tests
+
 class BullseyeTests: XCTestCase {
     
     var game: Game!
@@ -21,14 +23,14 @@ class BullseyeTests: XCTestCase {
     }
 
     func testScorePositive(){
-        var guess = game.target + 5
-        var score = game.points(sliderValue: guess)
+        let guess = game.target + 5
+        let score = game.points(sliderValue: guess)
         XCTAssertEqual(score, 95)
     }
     
     func testScoreNegative(){
-        var guess = game.target - 5
-        var score = game.points(sliderValue: guess)
+        let guess = game.target - 5
+        let score = game.points(sliderValue: guess)
         XCTAssertEqual(score, 95)
     }
 
